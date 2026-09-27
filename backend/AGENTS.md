@@ -6,7 +6,7 @@ The backend runs a LangGraph-based super agent with sandbox execution, persisten
 
 **Architecture**:
 - **Gateway API** (port 8001): REST API plus embedded LangGraph-compatible agent runtime
-- **Frontend** (port 3000): Next.js web interface
+- **Frontend** (port 3010 locally; Docker container port 3000): Next.js web interface
 - **Nginx** (port 2026): Unified reverse proxy entry point
 - **Provisioner** (port 8002, optional in Docker dev): Started only when sandbox is configured for provisioner/Kubernetes mode
 
@@ -291,7 +291,7 @@ Run `make dev` from the repo root to start all services at `http://localhost:202
 **Nginx routing**:
 - `/api/langgraph/*` → Gateway embedded runtime (8001), rewritten to `/api/*`
 - `/api/*` (other) → Gateway API (8001)
-- `/` (non-API) → Frontend (3000)
+- `/` (non-API) → Frontend (3010 locally; Docker upstream `frontend:3000`)
 
 ### Running Backend Services Separately
 

@@ -495,7 +495,7 @@ such a checkout, use `bash ./scripts/<name>.sh ...`.
 
    Bulk mode supports SQLite/PostgreSQL user registries, creates timestamped backups under `.deer-flow/memory-sample-backups/`, and rejects the non-persistent `database.backend: memory` mode. See [backend/docs/MEMORY_SETTINGS_REVIEW.md](backend/docs/MEMORY_SETTINGS_REVIEW.md) for the complete review flow.
 
-Local services always use their internal ports (`8001`, `3000`, and `2026`).
+Local services always use their internal ports (`8001`, `3010`, and `2026`).
 The root `.env` variable `PORT` configures only the published Docker ingress;
 it does not change the Next.js port used by `make dev`.
 

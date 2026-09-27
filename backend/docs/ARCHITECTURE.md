@@ -16,7 +16,7 @@ This document provides a comprehensive overview of the DeerFlow backend architec
 │  ┌────────────────────────────────────────────────────────────────────┐  │
 │  │  /api/langgraph/*  →  Gateway LangGraph-compatible runtime (8001)  │  │
 │  │  /api/*            →  Gateway REST APIs (8001)                     │  │
-│  │  /*                →  Frontend (3000)                               │  │
+│  │  /*                →  Frontend (3010)                               │  │
 │  └────────────────────────────────────────────────────────────────────┘  │
 └─────────────────────────────────┬────────────────────────────────────────┘
                                   │
@@ -25,7 +25,7 @@ This document provides a comprehensive overview of the DeerFlow backend architec
           ▼                                               ▼
 ┌─────────────────────────────────────────────┐ ┌─────────────────────┐
 │              Gateway API                    │ │     Frontend        │
-│              (Port 8001)                    │ │    (Port 3000)      │
+│              (Port 8001)                    │ │    (Port 3010)      │
 │                                             │ │                     │
 │  - LangGraph-compatible runs/threads API    │ │  - Next.js App      │
 │  - Embedded Agent Runtime                   │ │  - React UI         │

@@ -79,7 +79,7 @@ else
     summary_hint="logs/{gateway,frontend,nginx}.log"
     print_step "1. Checking local service ports..."
     check_listen_port "Nginx" 2026
-    check_listen_port "Frontend" 3000
+    check_listen_port "Frontend" 3010
     check_listen_port "Gateway" 8001
 fi
 echo ""

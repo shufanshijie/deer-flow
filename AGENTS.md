@@ -28,7 +28,7 @@ A single `make dev` / Docker stack runs four cooperating services:
 | --------------- | ------ | ------------------------------------------------------------------- |
 | **Nginx**       | `2026` | Unified reverse-proxy entry point — open this in the browser        |
 | **Gateway API** | `8001` | FastAPI REST API + embedded LangGraph-compatible agent runtime      |
-| **Frontend**    | `3000` | Next.js web interface                                               |
+| **Frontend**    | `3010` | Next.js web interface (local). Docker containers still listen on `3000` |
 | **Provisioner** | `8002` | Optional — only when sandbox is configured for provisioner/K8s mode |
 
 Nginx is the single public entry: it proxies `/api/*` to the Gateway, rewriting
@@ -40,7 +40,7 @@ video uncompressed at the proxy layer.
 Both compose files publish that entry as `"${BIND_HOST:-127.0.0.1}:${PORT:-2026}:2026"`
 — **loopback by default**, matching the README's documented deployment model; a bare
 `"${PORT}:2026"` binds `0.0.0.0`, which does not. The root `PORT` value is Docker ingress
-configuration only; local orchestration pins Next.js to `3000` so loading `.env` cannot
+configuration only; local orchestration pins Next.js to `3010` so loading `.env` cannot
 make `make dev` wait on the wrong port. Nginx listening `default_server` on IPv4+IPv6 and
 the Gateway binding `0.0.0.0:8001` are container-internal on purpose: the published nginx
 port is the entire external surface. Any new published port needs an explicit bind
@@ -200,7 +200,7 @@ cd frontend && pnpm rstest run <pattern>     # e.g. pnpm rstest run my-component
 
 - Docker stack: `make docker-logs` (or `docker compose -f docker/... logs -f <svc>`).
 - Local `make dev`: each service logs to its own terminal pane. Frontend dev-server
-  errors surface in the browser console at `localhost:3000`; backend tracebacks appear
+  errors surface in the browser console at `localhost:3010`; backend tracebacks appear
   in the Gateway terminal.
 
 ## Where to Go Next

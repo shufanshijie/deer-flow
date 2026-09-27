@@ -136,7 +136,7 @@ This document describes the detailed operating steps for each phase of the DeerF
 1. Run the following commands to check ports:
    ```bash
    lsof -i :2026  # Main port
-   lsof -i :3000  # Frontend
+   lsof -i :3010  # Frontend
    lsof -i :8001  # Gateway
    ```
 

@@ -32,7 +32,7 @@ public entry point.
 | --------------- | ------ | ------------------------------------------------------------------- |
 | **Nginx**       | `2026` | Unified reverse proxy — open this in the browser                    |
 | **Gateway API** | `8001` | FastAPI REST API + embedded LangGraph-compatible agent runtime      |
-| **Frontend**    | `3000` | Next.js web interface                                               |
+| **Frontend**    | `3010` | Next.js web interface (local). Docker containers still listen on `3000` |
 | **Provisioner** | `8002` | Optional — only when sandbox is in provisioner/K8s mode             |
 
 **Nginx routing** (the key entry-point contract):

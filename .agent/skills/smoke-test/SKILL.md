@@ -59,7 +59,7 @@ smoke-test/
 2. **Check pnpm** - Package manager
 3. **Check uv** - Python package manager
 4. **Check nginx** - Reverse proxy
-5. **Check required ports** - Confirm that ports 2026, 3000, and 8001 are not occupied
+5. **Check required ports** - Confirm that ports 2026, 3010, and 8001 are not occupied
 
 **Docker mode environment check** (if Docker is selected):
 1. **Check whether Docker is installed** - Run `docker --version`
